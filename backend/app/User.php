@@ -10,6 +10,7 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
+    protected $fillable = ['name', 'email', 'password'];
     // Rest omitted for brevity
 
     /**
@@ -30,5 +31,10 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        return $this->attributes['password'] = bcrypt($value);
     }
 }

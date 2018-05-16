@@ -1,7 +1,7 @@
  <?php
 
-// use Illuminate\Http\Request;
 
+ // use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +21,7 @@ Route::group([
 ], function () {
 
     Route::post('login', 'AuthController@login');
+    Route::post('sign-up', 'AuthController@signup');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
